@@ -26,7 +26,7 @@ nav {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 10%;
+    padding: 0;
 }
 
 .logo {
@@ -397,6 +397,7 @@ main {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    text-align: center; /* Center the text */
 }
 
 .newsletter h2 {
@@ -761,6 +762,28 @@ footer {
     margin-top: 16px;
 }
 
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.signature {
+    margin-top: 20px;
+    width: 150px;
+    height: auto;
+}
+
 .gallery {
     text-align: center;
     padding: 50px 20px;
@@ -798,13 +821,35 @@ footer {
 
 .gallery-grid img {
     width: 100%;
+    height: 200px; /* Fixed size */
+    object-fit: cover; /* Ensure the image covers the area */
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+    cursor: pointer; /* Indicate that the image is clickable */
 }
 
 .gallery-grid img:hover {
     transform: scale(1.05);
+}
+
+.fullscreen-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
 }
 
 /* Visited Place section styles */
@@ -1097,24 +1142,41 @@ footer {
 
 /* Responsive design */
 @media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        order: 1;
+        margin-left: 20px;
+    }
+
+    .burger-menu {
+        display: block; /* Ensure burger menu is displayed */
+        order: 3;
+        margin-right: 20px;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: white;
-        width: 100%;
+        width: 80%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 0;
+        padding: 20px;
+        text-align: center;
+        animation: ease-in-out 0.3s;
     }
 
     .nav-links.active {
         display: flex;
-    }
-
-    .burger-menu {
-        display: block;
+        z-index: 1000;
     }
 
     .social-media, .latest-update {
@@ -1199,4 +1261,79 @@ footer {
     .intro-video {
         margin-bottom: 20px;
     }
+
+    .nav-links {
+        display: none;
+    }
+
+    .social-media {
+        order: 2;
+        display: block;
+    }
+
+    .latest-update {
+        display: none;
+    }
+
+    .nav-links.active .social-media, .nav-links.active .latest-update {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-media {
+        gap: 20px;
+    }
+
+    .latest-update {
+        margin-top: 10px;
+    }
+}
+
+@keyframes ease-in-out {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Breadcrumb section styles */
+.breadcrumb {
+    position: relative;
+    text-align: center;
+    height: 20vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.breadcrumb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.breadcrumb h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    line-height: 1.2;
 }
