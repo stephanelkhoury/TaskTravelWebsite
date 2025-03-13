@@ -1,0 +1,1202 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    width: 100%;
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #f0c040;
+}
+
+.nav-links li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f0c040;
+    transition: width .3s;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media a {
+    color: black;
+    font-size: 20px;
+}
+
+.latest-update {
+    background-color: #f0c040;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.latest-update:hover {
+    background-color: #e0b030;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu i {
+    font-size: 24px;
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero section styles */
+.hero {
+    background-image: url('../assets/images/nature-mountains.png');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    padding: 0 20%;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: white;
+}
+
+.hero-content p:first-of-type {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.hero-content p:last-of-type {
+    font-size: 18px;
+    color: #dddddd;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}
+
+.cta-button {
+    background-color: #ffd700;
+    color: black;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #e0b030;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.intro-video {
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.intro-video img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.play-button i {
+    color: #f0c040;
+    font-size: 2rem;
+}
+
+.intro-text {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.intro-text img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: gray;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #f0c040;
+    font-weight: bold;
+}
+
+.read-more i {
+    margin-left: 5px;
+}
+
+/* Grid layout styles */
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.place {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.place img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.place-content {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+}
+
+.place:hover img {
+    transform: scale(1.1);
+}
+
+.place h2, .place h3, .place p {
+    transition: color 0.3s ease;
+}
+
+.place .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f0c040;
+    text-decoration: none;
+}
+
+.place .read-more:hover {
+    text-decoration: underline;
+}
+
+.read-more-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.read-more-button {
+    padding: 10px 20px;
+    background-color: #f0c040;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.read-more-button:hover {
+    background-color: #e0b030;
+}
+
+/* Banner section styles */
+.banner {
+    position: relative;
+    text-align: center;
+    height: 60vh;
+    background-image: url('../assets/images/ocean.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.banner p {
+    font-size: 0.9rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.spacer {
+    height: 20px;
+}
+
+/* Newsletter Signup section styles */
+.newsletter {
+    position: relative;
+    text-align: center;
+    height: 30vh;
+    background-image: url('../assets/images/heart-hands.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.newsletter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.newsletter p {
+    font-size: 0.9rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.4;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.subscribe-button {
+    padding: 10px 20px;
+    background-color: #f0c040;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.subscribe-button:hover {
+    background-color: #e0b030;
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: white;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left img {
+    height: 40px;
+    margin-bottom: 12px;
+}
+
+.footer-left h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: black;
+}
+
+.footer-left p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: black;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.footer-right h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: black;
+}
+
+.social-icons a {
+    font-size: 20px;
+    color: black;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #777;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 12px 0;
+    background-color: white;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Latest Posts And Guides section styles */
+.latest-posts {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.latest-posts h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.underline {
+    width: 30px;
+    height: 3px;
+    background-color: yellow;
+    display: block;
+    margin: 0 auto 24px;
+}
+
+.posts-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.post-card {
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.post-content {
+    padding: 16px;
+}
+
+.post-content h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.post-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.post-content .read-more {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    position: relative;
+}
+
+.post-content .read-more::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #e0b030;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.post-content .read-more:hover::after {
+    width: 100%;
+}
+
+.view-all-button {
+    display: block;
+    margin: 24px auto;
+    padding: 10px 24px;
+    background-color: #e0b030;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.view-all-button:hover {
+    background-color: #949494;
+}
+
+/* My Upcoming Tours & Destination section styles */
+.upcoming-tours {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.upcoming-tours h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.upcoming-tours .underline {
+    width: 40px;
+    height: 3px;
+    background-color: yellow;
+    display: block;
+    margin: 0 auto 32px;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tour-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.tour-card img {
+    width: 50%;
+    height: auto;
+    border-radius: 12px 0 0 12px;
+}
+
+.tour-content {
+    padding: 24px;
+    width: 50%;
+}
+
+.tour-content h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: black;
+}
+
+.tour-content p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.tour-content .read-more {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+
+.tour-content .read-more::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: yellow;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.tour-content .read-more:hover::after {
+    width: 100%;
+}
+
+/* About Me section styles */
+.about-me {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-me h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.about-me p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555555;
+    max-width: 800px;
+    margin: 0 auto 16px;
+}
+
+.about-me .author-name {
+    font-size: 16px;
+    font-style: italic;
+    text-align: right;
+    margin-top: 16px;
+}
+
+.gallery {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.gallery h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters .filter {
+    font-size: 16px;
+    color: #777777;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+.filters .filter.active,
+.filters .filter:hover {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Visited Place section styles */
+.visited-place {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.visited-place h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.visited-place p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555555;
+    max-width: 800px;
+    margin: 0 auto 16px;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.place {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.place img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.place-content {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+}
+
+.place:hover img {
+    transform: scale(1.1);
+}
+
+.place h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.place h3 {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.place p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.place .read-more {
+    font-size: 16px;
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+    cursor: pointer;
+}
+
+.place .read-more:hover {
+    text-decoration-color: #FFC000;
+}
+
+/* Contact Me section styles */
+.contact-me {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact-me h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form .form-group {
+    display: flex;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.send-message {
+    background-color: #FFD700;
+    color: #000000;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-message:hover {
+    background-color: #FFC000;
+}
+
+.work-with-me {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.work-with-me h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.work-with-me p {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.work-with-me a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.work-with-me a:hover {
+    text-decoration: underline;
+}
+
+.say-hi {
+    background-color: #FFD700;
+    color: #000000;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.say-hi:hover {
+    background-color: #FFC000;
+}
+
+/* Blog page styles */
+.blog-posts {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.blog-posts h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover img {
+    transform: scale(1.05);
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-content h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.post-content .post-meta {
+    font-size: 14px;
+    font-style: italic;
+    color: #777777;
+    margin-bottom: 12px;
+}
+
+.post-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 16px;
+}
+
+.post-content .read-more {
+    font-size: 16px;
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+    cursor: pointer;
+}
+
+.post-content .read-more:hover {
+    text-decoration-color: #FFC000;
+}
+
+.sidebar {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar a {
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+    color: #FFD700;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .social-media, .latest-update {
+        display: none;
+    }
+
+    .nav-links.active .social-media, .nav-links.active .latest-update {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-media {
+        gap: 20px;
+    }
+
+    .latest-update {
+        margin-top: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer-middle {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        margin-bottom: 20px;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .place {
+        width: 100%;
+    }
+
+    .posts-grid {
+        flex-direction: column;
+    }
+
+    .post-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .tours-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-card {
+        flex-direction: column;
+    }
+
+    .tour-card img {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .tour-content {
+        width: 100%;
+    }
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro-video, .intro-text {
+        width: 100%;
+        margin: 0;
+    }
+
+    .intro-video {
+        margin-bottom: 20px;
+    }
+}
