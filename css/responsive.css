@@ -1,0 +1,149 @@
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        order: 1;
+        margin-left: 20px;
+    }
+
+    .burger-menu {
+        display: block; /* Ensure burger menu is displayed */
+        order: 3;
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        width: 80%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        animation: ease-in-out 0.3s;
+    }
+
+    .nav-links.active {
+        display: flex;
+        z-index: 1000;
+    }
+
+    .social-media, .latest-update {
+        display: none;
+    }
+
+    .nav-links.active .social-media, .nav-links.active .latest-update {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-media {
+        gap: 20px;
+    }
+
+    .latest-update {
+        margin-top: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer-middle {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        margin-bottom: 20px;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .place {
+        width: 100%;
+    }
+
+    .posts-grid {
+        flex-direction: column;
+    }
+
+    .post-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .tours-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-card {
+        flex-direction: column;
+    }
+
+    .tour-card img {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .tour-content {
+        width: 100%;
+    }
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro-video, .intro-text {
+        width: 100%;
+        margin: 0;
+    }
+
+    .intro-video {
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .social-media {
+        order: 2;
+        display: block;
+    }
+
+    .latest-update {
+        display: none;
+    }
+
+    .nav-links.active .social-media, .nav-links.active .latest-update {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-media {
+        gap: 20px;
+    }
+
+    .latest-update {
+        margin-top: 10px;
+    }
+}

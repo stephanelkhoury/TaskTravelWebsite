@@ -1,0 +1,51 @@
+/* Places grid layout styles */
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.place {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.place img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.place-content {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+}
+
+.place:hover img {
+    transform: scale(1.1);
+}
+
+.place h2, .place h3, .place p {
+    transition: color 0.3s ease;
+}
+
+.place .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f0c040;
+    text-decoration: none;
+}
+
+.place .read-more:hover {
+    text-decoration: underline;
+}

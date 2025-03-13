@@ -1,0 +1,75 @@
+/* Newsletter Signup section styles */
+.newsletter {
+    position: relative;
+    text-align: center;
+    height: 30vh;
+    background-image: url('../assets/images/heart-hands.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.newsletter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Center the text */
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.newsletter p {
+    font-size: 0.9rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.4;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.subscribe-button {
+    padding: 10px 20px;
+    background-color: #f0c040;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.subscribe-button:hover {
+    background-color: #e0b030;
+}

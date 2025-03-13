@@ -561,19 +561,19 @@ footer {
 .underline {
     width: 30px;
     height: 3px;
-    background-color: yellow;
+    background-color: FFD700;
     display: block;
     margin: 0 auto 24px;
 }
 
 .posts-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .post-card {
-    width: 30%;
+    width: 100%;
     background-color: white;
     border-radius: 10px;
     padding: 16px;
@@ -663,14 +663,14 @@ footer {
 .upcoming-tours .underline {
     width: 40px;
     height: 3px;
-    background-color: yellow;
+    background-color: #FFD700;
     display: block;
     margin: 0 auto 32px;
 }
 
 .tours-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -680,20 +680,18 @@ footer {
     display: flex;
     align-items: center;
     background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .tour-card img {
-    width: 50%;
+    width: 100%;
     height: auto;
-    border-radius: 12px 0 0 12px;
+    border-radius: 12px;
 }
 
 .tour-content {
     padding: 24px;
-    width: 50%;
+    width: 100%;
 }
 
 .tour-content h3 {
@@ -723,7 +721,7 @@ footer {
     display: block;
     width: 20px;
     height: 2px;
-    background-color: yellow;
+    background-color: #FFD700;
     position: absolute;
     bottom: -2px;
     left: 0;
@@ -732,6 +730,25 @@ footer {
 
 .tour-content .read-more:hover::after {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .tours-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-card {
+        flex-direction: row;
+    }
+
+    .tour-card img {
+        width: 50%;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .tour-content {
+        width: 50%;
+    }
 }
 
 /* About Me section styles */
@@ -815,7 +832,8 @@ footer {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 20px;
 }
 
@@ -847,8 +865,8 @@ footer {
 }
 
 .fullscreen-overlay img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 8px;
 }
 
@@ -875,68 +893,59 @@ footer {
 
 .places-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 50px 20px;
+    padding: 20px;
 }
 
 .place {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .place img {
     width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
+    height: auto;
 }
 
 .place-content {
-    position: absolute;
-    bottom: 0;
+    padding: 15px;
+}
+
+.place-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.place-content h3 {
+    font-size: 1.2em;
     color: white;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
 }
 
-.place:hover img {
-    transform: scale(1.1);
+.place-content p {
+    font-size: 1em;
+    color: white;
+    margin-bottom: 15px;
 }
 
-.place h2 {
-    font-size: 22px;
+.place-content .read-more {
+    color: #FFD700;
+    text-decoration: none;
     font-weight: bold;
-    margin-bottom: 8px;
 }
 
-.place h3 {
-    font-size: 18px;
-    font-style: italic;
-    margin-bottom: 8px;
+.place:hover {
+    transform: translateY(-5px);
 }
 
-.place p {
-    font-size: 16px;
-    line-height: 1.4;
-    margin-bottom: 12px;
-}
-
-.place .read-more {
-    font-size: 16px;
-    color: #000000;
-    text-decoration: underline;
-    text-decoration-color: #FFD700;
-    cursor: pointer;
-}
-
-.place .read-more:hover {
-    text-decoration-color: #FFC000;
+@media (max-width: 768px) {
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Contact Me section styles */
@@ -1050,11 +1059,12 @@ footer {
 
 .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .post-card {
+    width: 100%;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1337,3 +1347,71 @@ footer {
     font-weight: 900;
     line-height: 1.2;
 }
+
+/* Hover grow effect for buttons */
+button, .read-more, .view-all-button, .cta-button {
+    transition: transform 0.3s ease;
+}
+
+button:hover, .read-more:hover, .view-all-button:hover, .cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Hover grow effect for images */
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Animation for elements appearing on scroll */
+.appear {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.appear.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* As Seen In section styles */
+.as-seen-in {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.as-seen-in h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.underline {
+    width: 30px;
+    height: 3px;
+    background-color: FFD700;
+    display: block;
+    margin: 0 auto 24px;
+}
+
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.logos-grid img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logos-grid img:hover {
+    transform: scale(1.1);
+}
+

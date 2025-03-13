@@ -70,13 +70,17 @@ To run the project, simply open the `index.html` file in your web browser. You c
 
 The main HTML file that contains the structure of the homepage. It includes sections such as the header, hero section, intro section, places grid, banner, latest posts, upcoming tours, newsletter signup, and footer.
 
+### `about.html`
+
+The HTML file that contains the structure of the "About Me" page. It includes sections such as the breadcrumb, about me, gallery, "As Seen In" section, and newsletter signup.
+
 ### `css/styles.css`
 
 The main CSS file that contains styles for the entire website. It includes styles for the header, main content, hero section, intro section, grid layouts, banner, newsletter signup, footer, and responsive design.
 
 ### `js/main.js`
 
-The main JavaScript file that contains scripts for adding interactivity to the website, such as handling the burger menu for mobile view.
+The main JavaScript file that contains scripts for adding interactivity to the website, such as handling the burger menu for mobile view and animations for elements appearing on scroll.
 
 ### `assets/images/`
 
@@ -97,6 +101,8 @@ The website is designed to be responsive and works well on various screen sizes.
 The website includes smooth animations for various elements, such as the hero section, grid items, and buttons. Key animations include:
 
 - **Ease-in-out animation**: Used for the navigation menu and other elements to provide a smooth transition effect.
+- **Hover grow effect**: Applied to buttons and images to create a scaling effect on hover.
+- **Scroll animation**: Elements appear with a smooth transition when they come into view while scrolling.
 
 ## Contact Information
 

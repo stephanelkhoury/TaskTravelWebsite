@@ -1,0 +1,70 @@
+/* Intro section styles */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.intro-video {
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.intro-video img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.play-button i {
+    color: #f0c040;
+    font-size: 2rem;
+}
+
+.intro-text {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.intro-text img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: gray;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #f0c040;
+    font-weight: bold;
+}
+
+.read-more i {
+    margin-left: 5px;
+}

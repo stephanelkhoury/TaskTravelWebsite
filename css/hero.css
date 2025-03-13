@@ -1,0 +1,64 @@
+/* Hero section styles */
+.hero {
+    background-image: url('../assets/images/nature-mountains.png');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    padding: 0 20%;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: white;
+}
+
+.hero-content p:first-of-type {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.hero-content p:last-of-type {
+    font-size: 18px;
+    color: #dddddd;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}
+
+.cta-button {
+    background-color: #ffd700;
+    color: black;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #e0b030;
+}
